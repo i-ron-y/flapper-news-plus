@@ -79,6 +79,13 @@ function($stateProvider, $urlRouterProvider) {
 			});
 	};
 
+	o.downvoteComment = function(post, comment) {
+		return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/downvote')
+			.success(function(data){
+				comment.upvotes--;
+			});
+	};
+
 	return o;
 }])
 
@@ -137,5 +144,9 @@ function($scope, posts, post){
 
 	$scope.incrementUpvotes = function(comment) {
 		posts.upvoteComment(post, comment);
+	};
+
+	$scope.decrementUpvotes = function(comment) {
+		posts.downvoteComment(post, comment);
 	};
 }]);
