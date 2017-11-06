@@ -55,6 +55,13 @@ function($stateProvider, $urlRouterProvider) {
 			});
 	};
 
+	o.downvote = function(post) {
+		return $http.put('/posts/' + post._id + '/downvote')
+			.success(function(data){
+				post.upvotes--;
+			});
+	};
+
 	o.get = function(id) {
 		return $http.get('/posts/' + id).then(function(res){
 			return res.data;
@@ -98,6 +105,10 @@ function($scope, posts){
 
 	$scope.incrementUpvotes = function(post) {
 		posts.upvote(post);
+	};
+
+	$scope.decrementUpvotes = function(post) {
+		posts.downvote(post);
 	};
 
 }])

@@ -54,6 +54,14 @@ router.put('/posts/:post/upvote', function(req, res, next) {
 	});
 });
 
+router.put('/posts/:post/downvote', function(req, res, next) {
+	req.post.downvote(function(err, post){
+		if (err) { return next(err); }
+
+		res.json(post);
+	});
+});
+
 router.post('/posts/:post/comments', function(req, res, next) {
 	var comment = new Comment(req.body);
 	comment.post = req.post;
