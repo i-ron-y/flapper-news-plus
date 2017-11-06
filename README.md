@@ -4,7 +4,14 @@ Modified version of Flapper News (from the [Learn to Build Modern Web Apps with 
 
 ## Modifications
 
+##### Suggested at the end of the tutorial:
 
+* Implement downvoting for posts and comments.
+* Display number of comments for each post on main page.
+
+##### Personal ideas:
+
+*
 
 ## Usage
 
