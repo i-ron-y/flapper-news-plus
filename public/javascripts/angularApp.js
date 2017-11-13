@@ -118,6 +118,12 @@ function($scope, posts){
 		posts.downvote(post);
 	};
 
+	$scope.showPostForm = false;
+
+	$scope.togglePostForm = function() {
+		$scope.showPostForm = !($scope.showPostForm);
+	};
+
 }])
 
 .controller('PostsCtrl', [
@@ -149,4 +155,11 @@ function($scope, posts, post){
 	$scope.decrementUpvotes = function(comment) {
 		posts.downvoteComment(post, comment);
 	};
+
+	$scope.showCommentForm = false;
+
+	$scope.toggleCommentForm = function(){
+		$scope.showCommentForm = !($scope.showCommentForm);
+	};
+	
 }]);

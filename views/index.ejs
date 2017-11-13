@@ -42,24 +42,32 @@
 			</span>
 		</div>
 
-		<form ng-submit="addPost()"
-			  style="margin-top:30px;">
-			<h3>Add a new post</h3>
+		
+		<button class="btn btn-primary" style="margin-top:10px;" ng-click="togglePostForm()">
+			<span ng-show="showPostForm">Hide form</span>
+			<span ng-hide="showPostForm">Add a new post</span>
+		</button>
 
-			<div class="form-group">
-				<input type="text"
-					   class="form-control"
-					   placeholder="Title"
-					   ng-model="title"></input>
-			</div>
-			<div class="form-group">
-				<input type="text"
-					   class="form-control"
-					   placeholder="Link"
-					   ng-model="link"></input>
-			</div>
-			<button type="submit" class="btn btn-primary">Post</button>
-		</form>
+		<span ng-show="showPostForm">
+			<form ng-submit="addPost()"
+				  style="margin-top:30px;">
+				<h3>Add a new post</h3>
+
+				<div class="form-group">
+					<input type="text"
+						   class="form-control"
+						   placeholder="Title"
+						   ng-model="title"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						   class="form-control"
+						   placeholder="Link"
+						   ng-model="link"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">Post</button>
+			</form>
+		</span>
 	</script>
 	<script type="text/ng-template" id="/posts.html">
 		<div class="page-header">
@@ -85,18 +93,25 @@
 			</span>
 		</div>
 
-		<form ng-submit="addComment()"
-			  style="margin-top:30px;">
-			<h3>Add a new comment</h3>
+		<button ng-click="toggleCommentForm()" class="btn btn-primary" style="margin-top: 10px;">
+			<span ng-show="showCommentForm">Hide form</span>
+			<span ng-hide="showCommentForm">Add a new comment</span>
+		</button>
 
-			<div class="form-group">
-				<input type="text"
-					   class="form-control"
-					   placeholder="Comment"
-					   ng-model="body"></input>
-			</div>
-			<button type="submit" class="btn btn-primary">Post</button>
-		</form>
+		<span ng-show="showCommentForm">
+			<form ng-submit="addComment()"
+				  style="margin-top:30px;">
+				<h3>Add a new comment</h3>
+
+				<div class="form-group">
+					<input type="text"
+						   class="form-control"
+						   placeholder="Comment"
+						   ng-model="body"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">Post</button>
+			</form>
+		</span>
 	</script>
 </body>
 </html>

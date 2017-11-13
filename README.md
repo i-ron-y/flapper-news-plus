@@ -8,6 +8,8 @@ Modified version of Flapper News (from the [Learn to Build Modern Web Apps with 
 
 * Implement downvoting for posts and comments.
 * Display number of comments for each post on main page.
+* Implement button to show/hide 'new post' and 'new comment' forms.
+* 
 
 ##### Personal ideas:
 
